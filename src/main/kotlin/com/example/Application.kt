@@ -13,6 +13,6 @@ fun Application.module() {
     install(ContentNegotiation){
         json()
     }
-    // configureRouting()
+     // configureRouting()
     routingStaticContent()
 }
