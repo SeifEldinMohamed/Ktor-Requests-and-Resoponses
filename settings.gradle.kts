@@ -1,0 +1,1 @@
+rootProject.name = "com.seif.ktor-requests-and-responses"
