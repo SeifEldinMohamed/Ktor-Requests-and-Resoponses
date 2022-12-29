@@ -12,5 +12,14 @@ fun Application.configureRouting() {
         get("/") {
             call.respondText("Hello World!")
         }
+        get("/users/{username}") {
+            val username = call.parameters["username"]
+            val header = call.request.headers["Connection"]
+            if (username == "Admin") {
+                call.response.header(name = "CustomHeader", value = "Admin")
+                call.respond(message = "Hello Admin", status = HttpStatusCode.OK)
+            }
+            call.respondText ("Hello $username with header: $header")
+        }
     }
 }
