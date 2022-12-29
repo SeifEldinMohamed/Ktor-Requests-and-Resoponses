@@ -21,5 +21,10 @@ fun Application.configureRouting() {
             }
             call.respondText ("Hello $username with header: $header")
         }
+        get("/user") {
+            val name = call.request.queryParameters["name"]
+            val age = call.request.queryParameters["age"]
+            call.respondText("Hello my name is $name, I'm $age years old")
+        }
     }
 }
