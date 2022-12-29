@@ -38,6 +38,13 @@ fun Application.configureRouting() {
                 call.respond(message = e.message.toString(), status = HttpStatusCode.BadRequest)
             }
         }
+        get("/redirect") {
+            call.respondRedirect(url = "/moved", permanent = false)
+
+        }
+        get("/moved") {
+            call.respondText("you have been successfully redirected")
+        }
     }
 }
 
